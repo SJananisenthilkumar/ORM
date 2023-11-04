@@ -21,28 +21,29 @@ Execute Django admin and create 10 Football players
 ## PROGRAM
 ```
 admin.py
-
 from django.contrib import admin
-from .models import Employee,EmployeeAdmin
-admin.site.register(Employee,EmployeeAdmin)
+from .models import Football,FootballAdmin
+admin.site.register(Football,FootballAdmin)
 
 models.py
 
 from django.db import models
 from django.contrib import admin
-class Employee (models.Model):
-    eid=models.CharField(max_length=20,help_text="Employee ID")
-    name=models.CharField(max_length=100)
-    salary=models.IntegerField()
-    age=models.IntegerField()
+class Football (models.Model):
+    name=models.CharField(max_length=200)
+    address=models.CharField(max_length=100)
+    mobileno=models.IntegerField()
     email=models.EmailField()
+    age=models.CharField(max_length=100)
 
-class EmployeeAdmin(admin.ModelAdmin):
-    list_display=('eid','name','salary','age','email')
+class FootballAdmin(admin.ModelAdmin):
+    list_display=['name','address','mobileno','email','age']
+    
 ```
 
 ## OUTPUT
-![Alt text](<Screenshot (4).png>)
+![Alt text](<Screenshot (5).png>)
 
 ## RESULT
 Thus the program for creating a database using ORM hass been executed successfully
+    
